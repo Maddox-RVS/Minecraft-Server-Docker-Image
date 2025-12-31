@@ -28,7 +28,7 @@ COPY --from=itzg/minecraft-server /usr/local/bin/rcon-cli /usr/bin/rcon-cli
 # Copy and set entrypoint script
 # -------------------------------
 
-COPY entrypoint.sh /entrypoint.sh
+COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
@@ -73,10 +73,10 @@ RUN apt install -y temurin-21-jdk
 
 RUN mkdir minecraft_server
 RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server
-COPY server.jar /home/mcadmin/minecraft_server
-COPY start.sh /home/mcadmin/minecraft_server
-COPY server.properties /home/mcadmin
-COPY eula.txt /home/mcadmin
+COPY mc_serv/server.jar /home/mcadmin/minecraft_server
+COPY scripts/start.sh /home/mcadmin/minecraft_server
+COPY mc_serv/server.properties /home/mcadmin
+COPY mc_serv/eula.txt /home/mcadmin
 
 # -------------------------------------------
 
@@ -84,7 +84,7 @@ COPY eula.txt /home/mcadmin
 # Configure Container for SSH
 # ----------------------------
 
-COPY sshd_config /etc/ssh/sshd_config
+COPY configs/sshd_config /etc/ssh/sshd_config
 
 # ----------------------------
 
@@ -92,7 +92,7 @@ COPY sshd_config /etc/ssh/sshd_config
 # Configure Vim
 # --------------
 
-COPY vim_config /home/mcadmin/.vimrc
+COPY configs/vim_config /home/mcadmin/.vimrc
 
 # --------------
 
@@ -100,9 +100,9 @@ COPY vim_config /home/mcadmin/.vimrc
 # Configure neofetch
 # -------------------
 
-COPY neofetch_custom.py /neofetch_custom.py
-COPY minecraft_logo.ansi /minecraft_logo.ansi
-COPY neofetch_config /home/mcadmin/.config/neofetch/config.conf
+COPY scripts/neofetch/neofetch_custom.py /neofetch_custom.py
+COPY scripts/neofetch/minecraft_logo.ansi /minecraft_logo.ansi
+COPY configs/neofetch_config /home/mcadmin/.config/neofetch/config.conf
 
 # -------------------
 
@@ -110,11 +110,11 @@ COPY neofetch_config /home/mcadmin/.config/neofetch/config.conf
 # Configure tmux
 # ---------------
 
-COPY tmux_config /home/mcadmin/.tmux.conf
-COPY start_minecraft_server.sh /home/mcadmin/minecraft_server/start_minecraft_server.sh
+COPY configs/tmux_config /home/mcadmin/.tmux.conf
+COPY scripts/start_minecraft_server.sh /home/mcadmin/minecraft_server/start_minecraft_server.sh
 RUN chmod +x /home/mcadmin/minecraft_server/start_minecraft_server.sh
 RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server/start_minecraft_server.sh
-COPY stop_minecraft_server.sh /home/mcadmin/minecraft_server/stop_minecraft_server.sh
+COPY scripts/stop_minecraft_server.sh /home/mcadmin/minecraft_server/stop_minecraft_server.sh
 RUN chmod +x /home/mcadmin/minecraft_server/stop_minecraft_server.sh
 RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server/stop_minecraft_server.sh
 
