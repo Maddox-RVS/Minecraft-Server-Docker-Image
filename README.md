@@ -5,6 +5,8 @@
 [![Neofetch](https://img.shields.io/badge/neofetch-%238ab4f8.svg?logo=linux&logoColor=white)](https://github.com/dylanaraps/neofetch)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+A fully-featured, containerized Minecraft server environment built with Docker. This project provides an easy-to-deploy Minecraft server with SSH access, tmux session management, and built-in system monitoring tools. Perfect for hosting multiplayer Minecraft servers with minimal setup and maximum flexibility.
+
 # Setup the Server
 > ## All instructions should be executed on the client/host machine
 > - Build the docker image using `docker compose build`
