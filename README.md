@@ -1,5 +1,5 @@
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?logo=docker&logoColor=white)](https://www.docker.com/)
-[![SSH](https://izmg.shields.io/badge/ssh-%23000000.svg?logo=openssh&logoColor=white)](https://www.openssh.com/)
+[![SSH](https://img.shields.io/badge/ssh-%23000000.svg?logo=openssh&logoColor=white)](https://www.openssh.com/)
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
 [![tmux](https://img.shields.io/badge/tmux-%231bb91f.svg?logo=tmux&logoColor=white)](https://github.com/tmux/tmux)
 [![Neofetch](https://img.shields.io/badge/neofetch-%238ab4f8.svg?logo=linux&logoColor=white)](https://github.com/dylanaraps/neofetch)
