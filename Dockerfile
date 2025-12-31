@@ -72,11 +72,13 @@ RUN apt install -y temurin-21-jdk
 # -------------------------------------------
 
 RUN mkdir minecraft_server
-RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server
 COPY mc_serv/server.jar /home/mcadmin/minecraft_server
 COPY scripts/start.sh /home/mcadmin/minecraft_server
 COPY mc_serv/server.properties /home/mcadmin
 COPY mc_serv/eula.txt /home/mcadmin
+RUN mkdir minecraft_server/backups
+COPY scripts/backup_server_rcon.sh /home/mcadmin/minecraft_server/backup_server_rcon.sh
+RUN chmod +x /home/mcadmin/minecraft_server/backup_server_rcon.sh
 
 # -------------------------------------------
 
@@ -113,10 +115,8 @@ COPY configs/neofetch_config /home/mcadmin/.config/neofetch/config.conf
 COPY configs/tmux_config /home/mcadmin/.tmux.conf
 COPY scripts/start_minecraft_server.sh /home/mcadmin/minecraft_server/start_minecraft_server.sh
 RUN chmod +x /home/mcadmin/minecraft_server/start_minecraft_server.sh
-RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server/start_minecraft_server.sh
 COPY scripts/stop_minecraft_server.sh /home/mcadmin/minecraft_server/stop_minecraft_server.sh
 RUN chmod +x /home/mcadmin/minecraft_server/stop_minecraft_server.sh
-RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server/stop_minecraft_server.sh
 
 # ---------------
 
@@ -141,4 +141,6 @@ EXPOSE 22
 
 # --------------------------------
 
+
+RUN chown -R mcadmin:mcadmin /home/mcadmin/minecraft_server
 USER mcadmin
