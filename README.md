@@ -1,3 +1,10 @@
+[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![tmux](https://img.shields.io/badge/tmux-%231bb91f.svg?logo=tmux&logoColor=white)](https://github.com/tmux/tmux)
+[![SSH](https://img.shields.io/badge/ssh-%23000000.svg?logo=openssh&logoColor=white)](https://www.openssh.com/)
+[![Neofetch](https://img.shields.io/badge/neofetch-%238ab4f8.svg?logo=linux&logoColor=white)](https://github.com/dylanaraps/neofetch)
+
 # Setup the Server
 > ## All instructions should be executed on the client/host machine
 > - Build the docker image using `docker compose build`
