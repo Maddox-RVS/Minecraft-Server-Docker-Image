@@ -20,8 +20,8 @@ A fully-featured, containerized Minecraft server environment built with Docker. 
 >
 > Before using the Minecraft Server Docker Image, ensure that you have the following:
 > 
-> 1. **Docker**: The program requires Docker to be installed on your system. You can download Docker from the official Docker website: [docker.com](https://www.docker.com).
-> 2. **Git** (for cloning the repository): [git-scm.com](https://git-scm.com/).
+> 1. [**Docker**](https://www.docker.com): The program requires Docker to be installed on your system.
+> 2. [**Git**](https://git-scm.com/) (for cloning the repository).
 
 ## Setup the Server
 > ### All instructions should be executed on the client/host machine
