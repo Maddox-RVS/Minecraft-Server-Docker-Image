@@ -6,6 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A fully-featured, containerized Minecraft server environment built with Docker. This project provides an easy-to-deploy Minecraft server with SSH access, tmux session management, and built-in system monitoring tools. Perfect for hosting multiplayer Minecraft servers with minimal setup and maximum flexibility.
+![Project Overview Preview](https://github.com/user-attachments/assets/88c7e027-9271-49fe-8921-88071ea56295)
 
 # Setup the Server
 > ## All instructions should be executed on the client/host machine
