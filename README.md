@@ -37,3 +37,7 @@ A fully-featured, containerized Minecraft server environment built with Docker. 
 > ### All instructions should be executed inside the directory `/home/mcadmin/minecraft_server`
 > - You can configure settings in the `server.properties` file
 >   - Make sure to change the `rcon` password to something more secure, by default it's `mcadmin`
+
+## Credits & Licenses
+This project uses the following third-party tools:
+* [rcon-cli](https://github.com/itzg/rcon-cli) - Created by [itzg](https://github.com/itzg), licensed under the [Apache License 2.0](https://github.com/itzg/rcon-cli/blob/master/LICENSE).
