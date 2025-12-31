@@ -1,0 +1,19 @@
+services:
+    mcserver:
+        hostname: mcserv
+        user: mcadmin
+
+        build:
+            context: .
+            dockerfile: Dockerfile
+
+        image: mcserver-1-21-11-img
+
+        stdin_open: true
+
+        container_name: mcserver-1-21-11-container
+
+        ports:
+            - "25565:25565"
+            - "25575:25575"
+            - "2200:22"
