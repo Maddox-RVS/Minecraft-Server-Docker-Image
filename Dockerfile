@@ -18,9 +18,12 @@ RUN apt install -y \
     neofetch \
     htop \
     python3 \
-    tmux
+    tmux \
+    curl \
+    build-essential
 
 COPY --from=itzg/minecraft-server /usr/local/bin/rcon-cli /usr/bin/rcon-cli
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # --------------------------
 
