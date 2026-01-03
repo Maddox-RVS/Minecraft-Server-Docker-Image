@@ -1,0 +1,2 @@
+# Ignore /target directory in servmgr rust project
+/servmgr/target/
