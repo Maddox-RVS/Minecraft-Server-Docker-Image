@@ -1,3 +1,5 @@
+mod server_activator;
+
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
@@ -10,7 +12,11 @@ struct Args {
 #[derive(Subcommand)]
 enum Commands {
     /// Starts the minecraft server and attaches your shell to a tmux session dashboard for server monitoring
-    Start,
+    Start {
+        /// Starts the tmux session containing the server dashboard but doesn't attach it to your shell
+        #[arg(short, long)]
+        detached: bool,
+    },
 
     /// Stops the minecraft server and subsequently the tmux session for server monitoring
     Stop,
@@ -55,11 +61,11 @@ fn main() {
     let args = Args::parse();
 
     match args.command {
-        Commands::Start {..} => {
-            println!("Starting server...");
+        Commands::Start {detached} => {
+            server_activator::start_minecraft_server(detached);
         },
         Commands::Stop {..} => {
-            println!("Stopping server...");
+            server_activator::stop_minecraft_server();
         },
         Commands::Backup {action} => {
             match action {

@@ -82,6 +82,8 @@ COPY mc_serv/eula.txt /home/mcadmin
 RUN mkdir minecraft_server/backups
 COPY scripts/backup_server_rcon.sh /home/mcadmin/minecraft_server/backup_server_rcon.sh
 RUN chmod +x /home/mcadmin/minecraft_server/backup_server_rcon.sh
+COPY scripts/start_scheduled_backups.sh /home/mcadmin/minecraft_server/start_scheduled_backups.sh
+RUN chmod +x /home/mcadmin/minecraft_server/start_scheduled_backups.sh
 
 # -------------------------------------------
 
@@ -133,6 +135,15 @@ RUN echo "python3 /neofetch_custom.py /minecraft_logo.ansi --txtclr 173 216 230"
 RUN echo "\n" >> /home/mcadmin/.bashrc
 
 # ------------------
+
+# --------------------------------
+# Copy and setup servmgr cli-tool
+# --------------------------------
+
+COPY servmgr/target/debug/servmgr /usr/local/bin/servmgr
+RUN chmod +x /usr/local/bin/servmgr
+
+# --------------------------------
 
 # --------------------------------
 # Documentation for exposed ports
