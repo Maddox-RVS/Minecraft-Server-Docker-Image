@@ -1,1 +1,0 @@
-/home/maddox/Docker/mc_server_image_1_21_11/servmgr/target/debug/servmgr: /home/maddox/Docker/mc_server_image_1_21_11/servmgr/src/main.rs /home/maddox/Docker/mc_server_image_1_21_11/servmgr/src/server_activator.rs
