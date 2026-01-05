@@ -72,11 +72,11 @@ fi
 # Begin server backup schedule logic
 trap request_termination SIGINT SIGTERM
 
+echo "Starting backups..."
 while true; do
     trap '' SIGINT SIGTERM
 
-    echo "Starting backups..."
-    source /home/mcadmin/minecraft_server/backup_server_rcon.sh "/home/mcadmin/minecraft_server/backups" "$RCON_PASSWORD"
+    servmgr backup man -p "$RCON_PASSWORD"
     trap request_termination SIGINT SIGTERM
 
     if [ "$TERMINATE_REQUESTED" = true ]; then

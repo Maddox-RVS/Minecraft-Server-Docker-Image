@@ -80,8 +80,6 @@ COPY scripts/start.sh /home/mcadmin/minecraft_server
 COPY mc_serv/server.properties /home/mcadmin
 COPY mc_serv/eula.txt /home/mcadmin
 RUN mkdir minecraft_server/backups
-COPY scripts/backup_server_rcon.sh /home/mcadmin/minecraft_server/backup_server_rcon.sh
-RUN chmod +x /home/mcadmin/minecraft_server/backup_server_rcon.sh
 COPY scripts/start_scheduled_backups.sh /home/mcadmin/minecraft_server/start_scheduled_backups.sh
 RUN chmod +x /home/mcadmin/minecraft_server/start_scheduled_backups.sh
 
