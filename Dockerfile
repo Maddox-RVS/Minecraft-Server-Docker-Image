@@ -10,6 +10,7 @@ FROM ubuntu:24.04
 # Install required packages
 # --------------------------
 
+RUN rm -rf /var/lib/apt/lists/*
 RUN apt update && apt upgrade -y
 RUN apt install -y \
 	sudo \
