@@ -10,20 +10,17 @@ FROM ubuntu:24.04
 # Install required packages
 # --------------------------
 
-RUN rm -rf /var/lib/apt/lists/* \
-    && apt update \
-    && apt upgrade -y \
-    && apt install -y --no-install-recommends \
-        sudo \
-        openssh-server \
-        vim \
-        neofetch \
-        htop \
-        python3 \
-        tmux \
-        curl \
-        build-essential \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt upgrade -y
+RUN apt install -y \
+	sudo \
+    openssh-server \
+    vim \
+    neofetch \
+    htop \
+    python3 \
+    tmux \
+    curl \
+    build-essential
 
 COPY --from=itzg/minecraft-server /usr/local/bin/rcon-cli /usr/bin/rcon-cli
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
