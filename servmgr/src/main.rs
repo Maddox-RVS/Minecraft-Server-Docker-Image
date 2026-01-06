@@ -71,7 +71,11 @@ enum BackupCommands {
     },
 
     /// Stops the automatic backup schedule
-    AutoStop,
+    AutoStop {
+        /// RCON password for the server
+        #[arg(short, long)]
+        password_rcon: String
+    },
 }
 
 fn main() {
@@ -100,8 +104,8 @@ fn main() {
                         seconds as u64 + minutes as u64 * 60 + hours as u64 * 3600 + days as u64 * 86400);
                     backup_controller::start_schedule_minecraft_server_backups(&password_rcon, &interval, &detached);
                 },
-                BackupCommands::AutoStop {..} => {
-                    backup_controller::stop_scheduled_minecraft_server_backups();
+                BackupCommands::AutoStop {password_rcon} => {
+                    backup_controller::stop_scheduled_minecraft_server_backups(&password_rcon);
                 },
             }
         },

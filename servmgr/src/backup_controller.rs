@@ -313,10 +313,8 @@ pub fn stop_scheduled_minecraft_server_backups(rcon_password: &str) {
         .expect("Failed to execute rcon server save-on command");
 
     if !rcon_server_save_on_output.status.success() {
-        status_spinner.println(
-            format!("{} {}", style("○").red().to_string(), style("Failed to enable auto-writing from RAM to DISK").cyan().to_string()));
-        status_spinner.finish_and_clear();
-        return false;
+        println!("{}", format!("{} {}", style("○").red().to_string(), style("Failed to enable auto-writing from RAM to DISK").cyan().to_string()));
+        return;
     }
 
     println!("{}", style(format!("=> Enabled auto-writing from RAM to DISK")).dim().to_string());
@@ -328,10 +326,8 @@ pub fn stop_scheduled_minecraft_server_backups(rcon_password: &str) {
         .expect("Failed to execute rcon server save-on notification");
 
     if !rcon_server_save_on_notification_output.status.success() {
-        status_spinner.println(
-            format!("{} {}", style("○").red().to_string(), style("Failed to send RCON server save-on notification").cyan().to_string()));
-        status_spinner.finish_and_clear();
-        return false;
+        println!("{}", format!("{} {}", style("○").red().to_string(), style("Failed to send RCON server save-on notification").cyan().to_string()));
+        return;
     }
 
     // kill tmux session
